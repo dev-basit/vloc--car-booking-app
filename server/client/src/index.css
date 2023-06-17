@@ -1,0 +1,894 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --primary: #8dc63f;
+  --secondary: #aadb1e;
+  --tertiary: #4a7115;
+  --darkGrey: #5f5f5f;
+  --white: #ffffff;
+  --smokeWhite: #f5f5f5;
+  --black: #000000;
+  --warning: #ff0000;
+}
+
+html {
+  font-size: 16px;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  color: transparent;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  appearance: radio;
+  -webkit-appearance: radio;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+select {
+  border: none;
+  outline: none;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Utility */
+.mblButton {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 90%;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  border: 1px solid balck;
+  box-shadow: 0px 15px 24px -10px rgba(0, 0, 0, 0.58);
+  cursor: pointer;
+}
+
+.inputContainer {
+  display: flex;
+  flex: 0.6;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(1rem);
+  border-radius: 2rem;
+}
+
+@media screen and (min-width: 480px) {
+  .inputContainer {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .inputContainer {
+    width: 35%;
+  }
+}
+
+.reactRouterDomLink {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
+}
+/* vLoc App  */
+
+.screen {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--smokeWhite);
+}
+
+@media screen and (min-width: 480px) {
+  .screen {
+    width: 60vw;
+  }
+}
+
+/* Login Screen */
+
+.loginScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url("../public/assets/loginBackground.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 100%;
+}
+
+.navbarIcon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.logo {
+  width: 7rem;
+  height: 5rem;
+  margin-top: 1rem;
+}
+
+.inputContainer > p {
+  color: var(--primary);
+  font-weight: 400;
+  margin-top: -1.4rem;
+}
+
+.inputContainerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.7rem;
+}
+
+.formHeaderText {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0.5rem;
+}
+
+.formHeaderSubText {
+  color: var(--primary);
+  font-weight: 400;
+}
+
+.inputContainerHeader img {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.inputContainer > p {
+  margin-top: -3rem;
+}
+
+.inputContainerField {
+  font-size: 0.7rem;
+  width: 92%;
+  margin: 0.5rem;
+}
+
+.inputContainerField label {
+  margin: 0 0 2rem 1rem;
+}
+
+.inputContainerField section {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  padding: 1rem;
+  margin-top: 0.2rem;
+  /* background-color: var(--white); */
+  background-color: var(--smokeWhite);
+  border-radius: 1.5rem;
+}
+
+.inputContainerField section img {
+  margin-right: 0.7rem;
+}
+
+.inputContainerField input {
+  flex: 1;
+}
+
+.inputContainerField .options {
+  flex: 1;
+}
+
+.inputContainerField .options option li {
+  padding-left: 2rem;
+  text-align: center;
+  color: red;
+}
+
+.forgotPassword {
+  display: flex;
+  align-items: center;
+}
+
+.forgotPassword img {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.2rem;
+}
+
+.loginButton {
+  font-weight: 600;
+  padding: 1rem;
+  width: 90%;
+  background-color: var(--white);
+  border-radius: 1.5rem;
+}
+
+.signupButton {
+  font-weight: 800;
+  margin-left: 0.5rem;
+}
+
+/* Trip Screen */
+
+.tripScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("../public/assets/vLocBackground.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.searchButton {
+  background-color: var(--primary);
+}
+
+.reservationButtons {
+  width: 90%;
+}
+
+.noOfVehicles {
+  align-self: self-start;
+  margin: 0rem 0 2rem 2rem;
+}
+
+.noOfVehicles p {
+  color: var(--primary);
+}
+
+.availableCarDetails {
+  width: 90vw;
+  background-color: white;
+  border-radius: 3rem;
+}
+
+.availableCarDetailsRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.availableCarDetailsRow img {
+  width: 8rem;
+  height: 7rem;
+  margin-top: -2rem;
+}
+
+.availableCarDetailsRow .price {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.availableCarDetails .detailsButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  border-top-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  background-color: var(--primary);
+}
+
+.availableCarDetails .detailsButton button {
+  color: white;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 480px) {
+  .screen {
+    width: auto;
+  }
+
+  .tripScreen {
+    align-items: flex-end;
+    padding-right: 7rem;
+  }
+
+  .availableCarDetails {
+    width: 35vw;
+    background-color: white;
+    border-radius: 3rem;
+  }
+
+  .noOfVehicles {
+    align-self: flex-end;
+  }
+}
+
+/* Reservation Screen*/
+.reservationScreen {
+  background-image: url("../public/assets/levelBackground.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--smokeWhite);
+}
+
+@media screen and (min-width: 480px) {
+  .reservationScreen {
+    background-image: none;
+    height: auto;
+  }
+}
+
+.arrow-goback {
+  position: absolute;
+  top: 4rem;
+  left: 0.5rem;
+  height: 0.8rem;
+  width: 0.8rem;
+}
+
+.reservation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--smokeWhite);
+}
+
+@media screen and (min-width: 480px) {
+  .reservation-container {
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 1rem;
+  }
+}
+
+.reservation-logo {
+  width: 6rem;
+  height: 3.2rem;
+  margin: 0.7rem 0;
+}
+
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem 0;
+  background-color: white;
+  border-radius: 3rem;
+  width: 90%;
+}
+
+.reservation-grid2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+}
+
+/* .reservationField {
+} */
+
+.reservationField-grid2 {
+  width: 45%;
+}
+
+.reservationField label {
+  margin-left: 1rem;
+}
+
+.reservationField section {
+  background-color: var(--smokeWhite);
+}
+
+/* Reservation Rent Details Screen  */
+.rentDuration {
+  background-color: var(--primary);
+  width: 8rem;
+  height: 4rem;
+  border-radius: 0.4rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rentDuration h3 {
+  color: var(--white);
+}
+
+.rentDuration p {
+  font-size: 0.6rem;
+}
+
+/* Reservation AddOns Screen  */
+.addons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.addonItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0.5rem;
+  width: 9.5rem;
+  height: 9rem;
+  border-radius: 2rem;
+  background-color: var(--smokeWhite);
+  background-image: url("../public//assets/addon.png");
+  background-repeat: no-repeat;
+  background-position: 50% 10%;
+}
+
+/* .addonItem:hover {
+  background-image: url("../public//assets/addonWhite.png");
+} */
+
+.addonItem p:nth-of-type(1) {
+  color: var(--darkGrey);
+  font-weight: bold;
+  padding: 0 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.addonItem p:nth-of-type(2) {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* .addonItem:hover {
+  background-color: var(--primary);
+} */
+
+.addonItemSelected {
+  background-image: url("../public//assets/addonWhite.png");
+  background-color: var(--primary);
+}
+
+.addonItemSelected p:nth-of-type(1) {
+  color: var(--white);
+}
+
+.addonItemSelected p:nth-of-type(2) {
+  color: var(--white);
+}
+
+/*  Reservation KYC screen*/
+.KycField {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 1rem 1rem;
+  width: 95%;
+  background-color: var(--smokeWhite);
+  border-radius: 3rem;
+}
+
+.KycField h5 {
+  width: 100%;
+  margin-left: 1rem;
+  font-weight: 500;
+}
+
+/*  Reservation Bill Sumamry Screen*/
+.datesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 90%;
+  height: 11rem;
+  padding: 1rem;
+  background-color: var(--primary);
+  border-radius: 2rem;
+}
+
+.datesContainer .timePeriod {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 49%;
+  margin: 0.3rem 0;
+  border-right: 0.1px solid black;
+}
+
+.datesContainer .timePeriod p:nth-of-type(1) {
+  color: white;
+}
+
+.datesContainer .timePeriod p:nth-of-type(2) {
+  color: var(--darkGrey);
+  font-weight: 600;
+}
+
+.datesContainer .timeDuration {
+  margin-left: 0.4rem;
+  width: 100%;
+  color: var(--tertiary);
+}
+
+.datesContainer .priceForTimePeriod {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5rem;
+  margin: 0.3rem 0;
+  width: 100%;
+  background-color: var(--smokeWhite);
+  border-radius: 3rem;
+}
+
+.datesContainer .priceForTimePeriod p:nth-of-type(1) {
+  font-size: 0.8rem;
+}
+
+.datesContainer .priceForTimePeriod h2:nth-of-type(1) {
+  color: var(--primary);
+}
+
+.reservationBillSummaryScreen .addonListContainer {
+  width: 90%;
+}
+
+.reservationBillSummaryScreen .addonListContainer h4 {
+  margin: 1rem 1rem;
+  font-weight: 600;
+}
+
+.reservationBillSummaryScreen .addonListContainer .addonListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem 1rem;
+}
+
+.reservationBillSummaryScreen .addonListContainer .addonListItem p:nth-of-type(2) {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.reservationBillSummaryScreen .paymentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: var(--white);
+  width: 90%;
+  height: 12rem;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+}
+
+.reservationBillSummaryScreen .totalContainer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--secondary);
+  width: 90%;
+  margin: 1rem;
+  border-radius: 3rem;
+}
+
+.reservationBillSummaryScreen .paymentContainer h4 {
+  font-weight: 600;
+}
+
+.reservationBillSummaryScreen .paymentContainer .paymentMethod {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 0.5rem;
+  outline: none;
+  background: transparent;
+  background-color: var(--smokeWhite);
+}
+
+.reservationBillSummaryScreen .paymentContainer .amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reservationBillSummaryScreen .paymentContainer .amount p:nth-of-type(2) {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.reservationBillSummaryScreen .distributionOfPaymentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  width: 90%;
+  background-color: var(--white);
+  border-radius: 3rem;
+}
+
+.reservationBillSummaryScreen .distributionOfPaymentContainer h4 {
+  font-weight: 600;
+}
+
+.reservationBillSummaryScreen .distributionOfPaymentContainer form {
+  display: flex;
+  align-items: center;
+}
+
+.reservationBillSummaryScreen .distributionOfPaymentContainer label {
+  margin: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--darkGrey);
+}
+
+/* Signature Screen  */
+.signatureScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signatureScreen .signaturePad {
+  flex: 1;
+  margin: 0rem auto;
+  margin-top: -3rem;
+  width: 90%;
+  background-color: var(--white);
+  border-radius: 3rem;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+@media screen and (min-width: 480px) {
+  .signatureScreen .signaturePad {
+    width: 50%;
+  }
+}
+/* Sidebar  screen*/
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70vw;
+  background-color: var(--white);
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  z-index: 1;
+  border: 1px solid var(--darkGrey);
+}
+
+.sidebar .profilePicContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  color: white;
+  background-color: var(--primary);
+  border-top-right-radius: 3rem;
+}
+
+.sidebar .profilePicContainer .profilePic {
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.sidebar .profilePicContainer p {
+  color: var(--darkGrey);
+}
+
+.sidebar .sideBarMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.sideBarMenu .sideBarItem {
+  text-decoration: none;
+  margin: 0.5rem;
+  border: 1px solid var(--darkGrey);
+  border-radius: 1rem;
+  width: 90%;
+}
+
+.sidebar .sideBarMenu button {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 1rem;
+}
+
+.sidebar .sideBarMenu span {
+  width: 2rem;
+  background-color: var(--smokeWhite);
+  border-radius: 50%;
+}
+
+.sidebar .sideBarMenu img {
+  width: 1.3rem;
+}
+
+.sidebar .sideBarMenu p {
+  padding-left: 1rem;
+  font-weight: 600;
+  color: var(--darkGrey);
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 480px) {
+  .sidebar {
+    width: 40vw;
+    position: absolute;
+    right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+  }
+
+  .sidebar .sideBarMenu {
+    align-items: center;
+  }
+
+  .sideBarMenu .sideBarItem {
+    width: 30%;
+  }
+
+  .sidebar .profilePicContainer {
+    border-top-right-radius: 0;
+    border-top-left-radius: 3rem;
+  }
+}
+
+/* Reservation In Progress Screen, it has also css for following screens, 
+pastReservation, settingsScreen, documentsScreen */
+
+.reservationInProgressScreen,
+.pastReservation,
+.settingsScreen,
+.documentsScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("../public/assets/vLocBackground.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.reservationInProgressScreen,
+.pastReservation,
+.settingsScreen {
+  background-image: url("../public/assets/vLocBackgroundLight.png");
+}
+
+.reservationInProgressScreen .datesContainer,
+.pastReservation .datesContainer {
+  background-color: var(--darkGrey);
+  height: 5rem;
+}
+
+.reservationInProgressScreen .greetings {
+  align-self: self-start;
+  margin-left: 2rem;
+  color: var(--white);
+}
+
+.reservationInProgressScreen .progressSection,
+.pastReservation .progressSection,
+.settingsScreen .progressSection {
+  flex: 1;
+  justify-content: space-around;
+}
+
+.reservationInProgressScreen .progressSection p,
+.pastReservation .progressSection p {
+  margin: 0;
+}
+
+.reservationInProgressScreen .progressSection p:nth-of-type(1),
+.pastReservation .progressSection p:nth-of-type(1) {
+  font-weight: 400;
+}
+
+.reservationInProgressScreen .progressSection p:nth-of-type(2),
+.pastReservation .progressSection p:nth-of-type(2) {
+  color: var(--primary);
+}
+
+/* Past Reservation Screen, css for this screen is is combined with above screen, reservationInProgressScreen, furhter is below */
+.pastReservation .formHeaderText,
+.settingsScreen .formHeaderText {
+  color: var(--white);
+}
+
+.pastReservation .datesContainer {
+  background-color: transparent;
+}
+
+.pastReservation .datesContainer p:nth-of-type(1) {
+  color: var(--black);
+}
+
+/* Settings Screen  */
+
+/* Document Screen */
+.documentsScreen {
+  justify-content: flex-start;
+}
+
+.documentsScreen .documentImg {
+  position: relative;
+  width: 20rem;
+  height: 15rem;
+}
+
+.documentsScreen .dustbinIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 5rem;
+  right: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: white;
+  border-radius: 50%;
+}
+
+/* Error Screen */
+.errorScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* width: 100vw; */
+  flex: 4;
+  color: var(--darkGrey);
+  background-color: var(--warning);
+}
+
+.errorScreen:hover {
+  color: var(--smokeWhite);
+}
+
+.errorScreen h1 {
+  font-size: 4rem;
+}
+
+.errorScreen h2 {
+  font-size: 2rem;
+}
